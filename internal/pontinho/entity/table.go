@@ -1,19 +1,21 @@
 package entity
 
-type table struct {
+// Table stores subscribers and game
+type Table struct {
 	id      int64
 	viewers []player
 }
 
 var (
-	tableId int64 = 0
+	tableID int64 = 0
 )
 
-func NewTable() *table {
+// NewTable returns a new table
+func NewTable() *Table {
 
-	tableId++
+	tableID++
 
-	return &table{
-		id: tableId,
+	return &Table{
+		id: tableID,
 	}
 }

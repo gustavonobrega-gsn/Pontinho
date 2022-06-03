@@ -4,24 +4,25 @@ import (
 	"pontinho/internal/pontinho/entity"
 )
 
-type initState struct {
-	gameCtx *GameContext
+// InitState initial game state machine
+type InitState struct {
+	gameCtx *Context
 }
 
-func NewInitState(gameContx *GameContext) *initState {
+// NewInitState creates a new init state
+func NewInitState(gameContx *Context) State {
 
-	return &initState{
+	state := &InitState{
 		gameCtx: gameContx,
 	}
 
-}
+	gameContx.state = state
 
-func (state *initState) init() {
-
-	for _, cardLabel := range entity.AllowedCardLabels {
-		for _, cardSuit := range entity.AllowedCardSuits {
+	for _, cardLabel := range gameContx.gameConfig.AllowedCardLabels {
+		for _, cardSuit := range gameContx.gameConfig.AllowedCardSuits {
 			state.gameCtx.deck = append(state.gameCtx.deck, entity.Card{Label: cardLabel, Suit: cardSuit})
 		}
 	}
 
+	return state
 }

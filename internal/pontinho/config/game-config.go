@@ -6,14 +6,14 @@ var (
 )
 
 type GameConfig struct {
-	allowedCardLabels []string
-	allowedCardSuits  []string
+	AllowedCardLabels []string
+	AllowedCardSuits  []string
 }
 
 func NewGameConfig() *GameConfig {
 
 	return &GameConfig{
-		allowedCardLabels: defaultAllowedCardLabels,
-		allowedCardSuits:  defaultAllowedCardSuits,
+		AllowedCardLabels: defaultAllowedCardLabels,
+		AllowedCardSuits:  defaultAllowedCardSuits,
 	}
 }

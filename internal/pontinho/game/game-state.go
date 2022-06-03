@@ -1,4 +1,5 @@
 package game
 
-type GameState interface {
+// State game state interface
+type State interface {
 }

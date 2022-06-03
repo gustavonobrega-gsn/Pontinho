@@ -5,7 +5,9 @@ import (
 	"pontinho/internal/pontinho/entity"
 )
 
-type GameContext struct {
+// Context store game properties
+type Context struct {
 	gameConfig config.GameConfig
 	deck       []entity.Card
+	state      State
 }
