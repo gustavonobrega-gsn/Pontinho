@@ -1,6 +1,6 @@
 package entity
 
-type card struct {
+type Card struct {
 	Label string
 	Suit  string
 }
